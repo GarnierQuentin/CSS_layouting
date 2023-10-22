@@ -81,12 +81,15 @@ main :nth-child(3n){
 }
 
 .tweet{
+    z-index: -1;
     display: flex;
     flex-direction: column;
     background-color: rgb(165, 165, 165);
     border-radius: 10px;
     margin: 5%;
     padding: 5%;
+    container-type: inline-size;
+    container-name: tweet;
 }
 
 header{
@@ -95,6 +98,7 @@ header{
     justify-content: left;
     border-radius: 10px;
     margin-bottom: 5%;
+    gap: 5%;
 }
 
 .profile_picture{
@@ -160,5 +164,62 @@ aside{
         order: 1;
         grid-column: 1/2;
         z-index: -1;
+    }
+
+    .name{
+        display: flex;
+        gap: 10%;
+    }
+}
+
+
+
+
+
+section{
+    position: sticky;
+    display: none;
+    margin-left: 10%;
+    top: 1%;
+    z-index: 2;
+}
+
+
+
+.burger_menu{
+    display: flex;
+    width: 10%;
+    background-color: rgb(137, 127, 97);
+    border-radius: 10px;
+
+}
+
+.burger_menu img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    section{
+        display: flex;
+    }
+
+    nav{
+        display: none;
+        position: fixed;
+        height: 100vh;
+        left: -110%;
+    }
+}
+
+
+
+
+@container tweet (max-width: 768px) {
+    header{
+        flex-direction: column;
     }
 }
