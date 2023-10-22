@@ -12,7 +12,7 @@ body{
 }
 
 nav{
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
     flex-wrap: wrap;
@@ -57,4 +57,108 @@ button{
 .image img{
     width: 100%;
     height: 100%;
+}
+
+
+
+
+
+
+
+
+.layout{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main :nth-child(3n){
+    grid-column: 1/3;
+}
+
+.tweet{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(165, 165, 165);
+    border-radius: 10px;
+    margin: 5%;
+    padding: 5%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.profile_picture{
+    width: 20%;
+}
+
+.profile_picture img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile_name{
+    font-weight: bold;
+}
+
+.account_name{
+    color: rgb(12, 124, 124);
+}
+
+
+
+
+aside{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    grid-column: 2/3;
+    align-items: center;
+}
+
+.popular{
+    position: sticky;
+    top: 40%;
+    align-items: center;
+    background-color: rgb(126, 153, 168);
+    padding: 20%;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    main{
+      order: 2;
+      grid-template-columns: 1fr;
+    }
+
+    main :nth-child(3n){
+        grid-column: 1/2;
+    }
+
+    .layout{
+        grid-template-columns: 1fr;
+    }
+
+    aside{
+        order: 1;
+        grid-column: 1/2;
+        z-index: -1;
+    }
 }
